@@ -1,4 +1,3 @@
-import queue
 from newGraph import Graph
 from queue import Queue
 
@@ -15,7 +14,7 @@ bfs_traversal_output=[]
 queue=Queue()
 
 """ sets all values to false none and minus to represent graph hasnt been traversed """
-for node in graph.adj_list.keys():
+for node in graph.adj_list:
     visited[node]=False
     parent[node]=None
     level[node]=-1
@@ -27,10 +26,10 @@ level[source_node]=0
 queue.put(source_node)
 
 while not queue.empty():
-    node_on_queue=queue.get()
-    bfs_traversal_output.append(node_on_queue)
+    node_on_queue=queue.get() #get the node on the queue
+    bfs_traversal_output.append(node_on_queue) #put that node onto a traversed array
 
-    for node in graph.adj_list[node_on_queue]:
+    for node in graph.adj_list[node_on_queue]:#loop based on how many edges a node has
         if not visited[node]:
             visited[node]=True
             parent[node]=node_on_queue
