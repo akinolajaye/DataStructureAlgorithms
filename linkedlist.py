@@ -23,7 +23,6 @@ class LinkedList:
 
         itr.next=Node(data,None)
 
-
     def print_list(self):
         if self.head is None:
             print("Linked List empty")
@@ -39,13 +38,10 @@ class LinkedList:
 
         print(linked_list_str)
 
-
     def insert_values(self,data_list):
         
         for data in data_list:
             self.insert_at_end(data)
-
-
 
     def insert_at(self,index,data):
         if index < 0 or index >self.get_length():
@@ -66,7 +62,6 @@ class LinkedList:
             itr=itr.next
             count+=1
 
-
     def remove_at(self,index):
         if index < 0 or index >self.get_length():
             raise Exception("invalid error")
@@ -84,8 +79,6 @@ class LinkedList:
             itr=itr.next
             count+=1       
 
-        
-
     def get_length(self):
         count=0
         itr=self.head
@@ -94,6 +87,8 @@ class LinkedList:
             count+=1
 
         return count
+
+ 
             
 
 x=LinkedList()
